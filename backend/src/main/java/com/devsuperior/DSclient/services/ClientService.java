@@ -3,6 +3,7 @@ package com.devsuperior.DSclient.services;
 import com.devsuperior.DSclient.dto.ClientDTO;
 import com.devsuperior.DSclient.entities.Client;
 import com.devsuperior.DSclient.repositories.ClientRepository;
+import com.devsuperior.DSclient.services.exceptions.ResourceNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -27,7 +28,7 @@ public class ClientService {
     @Transactional
     public ClientDTO findById(Long id) {
         Optional<Client> client = repository.findById(id);
-        Client c = client.orElseThrow(() -> new RuntimeException());
+        Client c = client.orElseThrow(() -> new ResourceNotFoundException("Resource not found"));
         return new ClientDTO(c);
     }
 
@@ -43,7 +44,6 @@ public class ClientService {
     @Transactional
     public ClientDTO update(ClientDTO dto, Long id) {
         Client client = repository.getOne(id);
-
         dtoForEntity(dto, client);
         client = repository.save(client);
         return new ClientDTO(client);
