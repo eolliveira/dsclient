@@ -1,0 +1,10 @@
+INSERT INTO tb_client (name, cpf, income, birth_date, children) VALUES ('Erick Oliveira', '665151316531', 54.5, NOW(), 3);
+INSERT INTO tb_client (name, cpf, income, birth_date, children) VALUES ('Erick Oliveira', '665151316531', 54.5, NOW(), 3);
+INSERT INTO tb_client (name, cpf, income, birth_date, children) VALUES ('Erick Oliveira', '665151316531', 54.5, NOW(), 3);
+INSERT INTO tb_client (name, cpf, income, birth_date, children) VALUES ('Erick Oliveira', '665151316531', 54.5, NOW(), 3);
+INSERT INTO tb_client (name, cpf, income, birth_date, children) VALUES ('Erick Oliveira', '665151316531', 54.5, NOW(), 3);
+INSERT INTO tb_client (name, cpf, income, birth_date, children) VALUES ('Erick Oliveira', '665151316531', 54.5, NOW(), 3);
+INSERT INTO tb_client (name, cpf, income, birth_date, children) VALUES ('Erick Oliveira', '665151316531', 54.5, NOW(), 3);
+INSERT INTO tb_client (name, cpf, income, birth_date, children) VALUES ('Erick Oliveira', '665151316531', 54.5, NOW(), 3);
+INSERT INTO tb_client (name, cpf, income, birth_date, children) VALUES ('Erick Oliveira', '665151316531', 54.5, NOW(), 3);
+INSERT INTO tb_client (name, cpf, income, birth_date, children) VALUES ('Erick Oliveira', '665151316531', 54.5, NOW(), 3);
