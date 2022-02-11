@@ -11,7 +11,7 @@ import java.time.Instant;
 public class ResourceExceptionHandler {
 
     @ExceptionHandler(value = ResourceNotFoundException.class)
-    public ResponseEntity<StandartError> entity(ResourceNotFoundException e){
+    public ResponseEntity<StandartError> entity(ResourceNotFoundException e, Http){
         StandartError standartError = new StandartError();
         standartError.setTimestamp(Instant.now());
         standartError.set
