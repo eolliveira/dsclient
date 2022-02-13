@@ -5,12 +5,12 @@ import com.devsuperior.DSclient.entities.Client;
 import com.devsuperior.DSclient.repositories.ClientRepository;
 import com.devsuperior.DSclient.services.exceptions.ResourceNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
-import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 @Service
 public class ClientService {
@@ -19,9 +19,9 @@ public class ClientService {
     private ClientRepository repository;
 
     @Transactional
-    public List<ClientDTO> findAll() {
-        List<Client> clients = repository.findAll();
-        return clients.stream().map(c -> new ClientDTO(c)).collect(Collectors.toList());
+    public Page<ClientDTO> findAll(Pageable page) {
+        Page<Client> clients = repository.findAll(page);
+        return clients.map(ClientDTO::new);
     }
 
 
