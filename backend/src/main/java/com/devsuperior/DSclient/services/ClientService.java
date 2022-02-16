@@ -43,7 +43,8 @@ public class ClientService {
 
     @Transactional
     public ClientDTO update(ClientDTO dto, Long id) {
-        Client client = repository.getOne(id);
+        Optional<Client> c = repository.findById(id);
+        Client client = c.orElseThrow(() -> new ResourceNotFoundException("Resource id: " + id + " not found"));
         dtoForEntity(dto, client);
         client = repository.save(client);
         return new ClientDTO(client);
@@ -52,8 +53,10 @@ public class ClientService {
 
     @Transactional
     public void delete(Long id) {
-        Client client = repository.getOne(id);
-        repository.deleteById(client.getId());
+        //Client client = repository.getOne(id);
+        Optional<Client> client = repository.findById(id);
+        Client c = client.orElseThrow(() -> new ResourceNotFoundException("Resource id: " + id + " not found"));
+        repository.deleteById(c.getId());
     }
 
     private void dtoForEntity(ClientDTO dto, Client client) {
